@@ -1,10 +1,10 @@
 ---
 - name: Add repo key
-  apt_key: 
+  apt_key:
     url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
   when: ansible_os_family == "Debian"
 
 - name: add repository
-  apt_repository: 
+  apt_repository:
     repo: 'deb http://apt.postgresql.org/pub/repos/apt/ {{ ansible_distribution_release }}-pgdg main'
   when: ansible_os_family == "Debian"
